@@ -1,0 +1,16 @@
+server {
+  listen 8080 http2;
+  server_name www.securedns.eu securedns.eu;
+  root /var/www/securedns.eu-www;
+  index index.html;
+
+  location / { # take note of Cross-origin resource sharing wildcard!
+    try_files $uri $uri/ =404;
+    add_header 'Access-Control-Allow-Methods' 'GET, HEAD, OPTIONS';
+    add_header 'Access-Control-Allow-Origin' '*';
+  }
+
+  location ~ /\. {
+    deny all;
+  }
+}

@@ -1,5 +1,5 @@
 #!/bin/bash
-KEYS_DIR="/usr/local/etc/dnscrypt-wrapper/keys"
+KEYS_DIR="/usr/local/etc/dnscrypt-wrapper/ads-keys"
 STKEYS_DIR="${KEYS_DIR}/short-term"
 
 prune() {
@@ -50,16 +50,16 @@ prune
 
 exec /usr/local/sbin/dnscrypt-wrapper -V \
     --user=dnscrypt-wrapper \
-    --listen-address=0.0.0.0:5353 \
-    --resolver-address=127.0.0.1:53 \
+    --listen-address=0.0.0.0:5443 \
+    --resolver-address=127.0.0.1:54 \
     --provider-name="2.dnscrypt-cert.securedns.eu" \
     --provider-cert-file="$(stcerts_files)" \
-    --crypt-secretkey-file=$(stkeys_files) --nolog --nofilter --dnssec &
+    --crypt-secretkey-file=$(stkeys_files) &
 
 exec /usr/local/sbin/dnscrypt-wrapper -V \
     --user=dnscrypt-wrapper \
-    --listen-address=[2a03:b0c0:0:1010::e9a:3001]:5353 \
-    --resolver-address=127.0.0.1:53 \
+    --listen-address=[2a03:b0c0:0:1010::e9a:3001]:5443 \
+    --resolver-address=127.0.0.1:54 \
     --provider-name="2.dnscrypt-cert.securedns.eu" \
     --provider-cert-file="$(stcerts_files)" \
-    --crypt-secretkey-file=$(stkeys_files) --nolog --nofilter --dnssec &
+    --crypt-secretkey-file=$(stkeys_files) &

@@ -1,0 +1,11 @@
+$TTL    10
+@       IN      SOA     ads-test.securedns.eu. root.test.securedns.eu. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns1.test.securedns.eu.
+@       IN      A       146.185.167.43
+ns1	IN	A	146.185.167.43

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="SecureDNS - unlogged and free DNS service with support for DNS over TLS, DNS over HTTPS, DNSCrypt, DNSSEC, additional TLDs, and an Adblocker.">
+  <meta name="author" content="Rick Lahaye">
+  <link rel="icon" href="img/securedns.png">
+
+  <title>SecureDNS</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Custom -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(() =>
+      $.ajax({type: 'HEAD', url: 'https://test.securedns.eu'})
+      .done(() => {
+        const $text = $('#status');
+        $text.html("You are using SecureDNS! <i class='fas fa-lock'></i>");
+      })
+    );
+    $(document).ready(() =>
+      $.ajax({type: 'HEAD', url: 'https://ads-test.securedns.eu'})
+      .done(() => {
+        const $text = $('#status');
+        $text.html("You are using AdBlock SecureDNS! <i class='fas fa-ad'> <i class='fas fa-lock'></i>");
+      })
+    );
+  </script>
+
+
+  <nav class="navbar navbar-expand-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">SecureDNS</h6></a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#stamps">Stamps</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ads">AdBlock</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#privacy">Privacy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#donation">Donations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+      </ul>
+    </div>
+    <a style="width: 400px; text-align: right;" class="navbar-text disabled" id="status">You are <b>not</b> using SecureDNS! <i class="fas fa-ban"></i>
+    </a>
+  </nav>
+
+  <div class="header container">
+    <div class="col-mg-4  text-center">
+      <h1><img style="width: 50px;" src="img/securedns.png"> SecureDNS</h1>
+      <p class="lead">Your privacy protected on the Internet</p>
+      <hr class="my-4" style="margin-bottom: 0rem !important;">
+      <p style="font-size: xx-large; color: red">SecureDNS will shutdown on 30th of April 2020. Please do not use SecureDNS anymore.</p>
+    </div>
+  </div>
+  <!-- Header -->
+
+  <section id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"><i class="fas fa-globe"></i> DNS over DNSCrypt</h4>
+              <p class="card-text">To connect with <a href="https://dnscrypt.info/">DNSCrypt</a>, use the following settings:</p>
+              <b>Provider Address</b>: 146.185.167.43:5353 or [2a03:b0c0:0:1010::e9a:3001]:5353 <br>
+              <b>Provider Name</b>: 2.dnscrypt-cert.securedns.eu <br>
+              <b>Provider Key</b>: F49F:2C73:4D62:B686:319E:D07E:6919:433B:2F13:85F4:1EFB:CA2F:176D:590B:2E45:3E86</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"><i class="fas fa-globe"></i> DNS over HTTPS (DoH)</h4>
+              <p class="card-text">To connect with a DNS over HTTPS <a href="https://github.com/curl/curl/wiki/DNS-over-HTTPS">client</a>, use the following settings:</p>
+              <b>IP Address</b>: 146.185.167.43:443 or [2a03:b0c0:0:1010::e9a:3001]:443<br>
+              <b>URL</b>: https://doh.securedns.eu/dns-query <br>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"><i class="fas fa-globe"></i> DNS over TLS (DoT)</h4>
+              <p class="card-text">
+                To connect with a DNS over TLS <a href="https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Clients">client</a>, use the following settings:<br><br>
+                <b>IP Address</b>: 146.185.167.43:853 or
+                [2a03:b0c0:0:1010::e9a:3001]:853<br>
+                <b>TLS Hostname</b>: dot.securedns.eu <br>
+                <b>TLS SPKI Pin</b>:<br>
+                h3mufC43MEqRD6uE4lz6gAgULZ5/riqH/E+U+jE3H8g= <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Home -->
+
+  <section id="ads">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mx-auto">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-ad"></i> AdBlock</h4>
+            <p class="card-text text-justify">
+              SecureDNS can be used as an Adblocker by using a alternative hostname/address instead. The advertisements that are getting blocked can be found <a href="https://github.com/notracking/hosts-blocklists">here</a>.
+            </p>
+            <div style="margin-left: 10px; table-layout: fixed; word-wrap: break-word;">
+              <p>
+                <b>DNS over HTTPS URL</b>: https://ads-doh.securedns.eu/dns-query <br>
+                <b>DNS over TLS Hostname</b>: ads-dot.securedns.eu <br>
+                <b>DNS over DNSCrypt</b>: 146.185.167.43:5443 or [2a03:b0c0:0:1010::e9a:3001]:5443
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AdBlock -->
+
+
+  <section id="stamps">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mx-auto">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-qrcode"></i> Stamps</h4>
+            <p class="card-text text-justify">
+              Stamps are like QR codes containg the parameters required to connect to DNS secure services. To use stamp, a compatible client is required like <a href="https://dnscrypt.info/">DNSCrypt v2</a>:
+            </p>
+            <div style="margin-left: 10px; table-layout: fixed; word-wrap: break-word;">
+              <p>
+                <b>DNS over DNSCrypt (IPv4)</b>: sdns://AQcAAAAAAAAAEzE0Ni4xODUuMTY3LjQzOjUzNTMg9J8sc01itoYxntB-aRlDOy8ThfQe-8ovF21ZCy5FPoYcMi5kbnNjcnlwdC1jZXJ0LnNlY3VyZWRucy5ldQ</ <br><br>
+                <b>DNS over DNSCrypt Adblock (IPv4)</b>: sdns://AQMAAAAAAAAAEzE0Ni4xODUuMTY3LjQzOjU0NDMg9J8sc01itoYxntB-aRlDOy8ThfQe-8ovF21ZCy5FPoYcMi5kbnNjcnlwdC1jZXJ0LnNlY3VyZWRucy5ldQ <br>
+                <b>DNS over DNSCrypt (IPv6)</b>: sdns://AQcAAAAAAAAAIVsyYTAzOmIwYzA6MDoxMDEwOjplOWE6MzAwMV06NTM1MyD0nyxzTWK2hjGe0H5pGUM7LxOF9B77yi8XbVkLLkU-hhwyLmRuc2NyeXB0LWNlcnQuc2VjdXJlZG5zLmV1 <br>
+                <b>DNS over DNSCrypt Adblock (IPv6)</b>: sdns://AQMAAAAAAAAAIVsyYTAzOmIwYzA6MDoxMDEwOjplOWE6MzAwMV06NTQ0MyD0nyxzTWK2hjGe0H5pGUM7LxOF9B77yi8XbVkLLkU-hhwyLmRuc2NyeXB0LWNlcnQuc2VjdXJlZG5zLmV1 <br>
+                <b>DNS over HTTPS (IPv4)</b>: sdns://AgcAAAAAAAAADjE0Ni4xODUuMTY3LjQzID4aGg9sU_PpekktVwhLW5gHBZ7gV6sVBYdv2D_aPbg4EGRvaC5zZWN1cmVkbnMuZXUKL2Rucy1xdWVyeQ <br>
+                <b>DNS over HTTPS Adblock (IPv4)</b>: sdns://AgcAAAAAAAAADjE0Ni4xODUuMTY3LjQzID4aGg9sU_PpekktVwhLW5gHBZ7gV6sVBYdv2D_aPbg4FGFkcy1kb2guc2VjdXJlZG5zLmV1Ci9kbnMtcXVlcnk <br>
+                <b>DNS over HTTPS (IPv6)</b>: sdns://AgcAAAAAAAAAHFsyYTAzOmIwYzA6MDoxMDEwOjplOWE6MzAwMV0gPhoaD2xT8-l6SS1XCEtbmAcFnuBXqxUFh2_YP9o9uDgQZG9oLnNlY3VyZWRucy5ldQovZG5zLXF1ZXJ5 <br>
+                <b>DNS over HTTPS Adblock (IPv6)</b>: sdns://AgcAAAAAAAAAHFsyYTAzOmIwYzA6MDoxMDEwOjplOWE6MzAwMV0gPhoaD2xT8-l6SS1XCEtbmAcFnuBXqxUFh2_YP9o9uDgUYWRzLWRvaC5zZWN1cmVkbnMuZXUKL2Rucy1xdWVyeQ <br>
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Privacy -->
+
+  <section id="privacy">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mx-auto">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-user-secret"></i> Privacy</h4>
+            <p class="card-text text-justify">
+              Use of this service is at own risk. I will not be held responsible for any downtime or mis-use of this free service. No logs are kept regarding DNS related traffic, nor will I turn any over.
+            </p>
+            <div class="text-left" style="margin-left: 10px;">
+              <p>
+                <i class="fas fa-check"></i> No Logging<br>
+                <i class="fas fa-check"></i> DNSSEC<br>
+                <i class="fas fa-check"></i> DNS over DNSCrypt<br>
+                <i class="fas fa-check"></i> DNS over HTTPS<br>
+                <i class="fas fa-check"></i> DNS over TLS<br>
+                <i class="fas fa-check"></i> Namecoin TLD<br>
+                <i class="fas fa-check"></i> OpenNIC TLD<br>
+                <i class="fas fa-check"></i> AdBlocker
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Privacy -->
+
+  <section id="donation">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mx-auto">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-euro-sign"></i> Donations</h4>
+            <p class="card-text text-justify">
+              Please feel free to donate. Donations are needed to keep the servers running, and keep up with the increasing popularity of SecureDNS! </p>
+
+            <div class="text-left" style="margin-left: 10px;">
+              <p>
+                <b>
+                  <a href="https://bunq.me/securedns">iDeal</a><br>
+                  <a href="https://liberapay.com/securedns/donate">Librepay</a><br>
+                  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LT9NXYQ2FNRTA&source=url">PayPal</a><br>
+                  <a href="https://securedns.eu/donate/bitcoin.html">BitCoin</a><br>
+                  <a href="https://www.patreon.com/bePatron?u=17134918">Patreon</a>
+                </b>
+              </p>
+            </div>
+            <!-- <h5>Organisations</h5> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Donation -->
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 mx-auto">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-user"></i> About</h4>
+            <img style="display: inline" class="img-profile" src="img/profile.jpg" alt="Rick Lahaye">
+            <p class="card-text text-justify">
+              My name is Rick Lahaye and I am a System engineer from The Netherlands. I have a passion for Linux
+              and security, and support multiple projects that support Internet privacy and its independence.
+              I work as a Developer Security Engineer for a bank.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About -->
+
+  <div class="footer">
+    <footer>
+      <hr class="my-4">
+      <ul class="list-inline text-right">
+        <li class="" style="font-size:small; float: left">© 2020 Rick Lahaye •</li>
+        <li>
+          <a rel="me" href="//github.com/ricklahaye/securedns.eu-config" title="Visit SecureDNS Github Page" target="_blank">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="//linkedin.com/in/ricklahaye" title="Visit my online LinkedIn profile" target="_blank">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="//twitter.com/ricklahaye" title="Visit my online Twitter profile" target="_blank">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="//t.co/lGjbpzeQbM?amp=1" title="Visit SecureDNS Telegram Channel" target="_blank">
+            <i class="fab fa-telegram" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a rel="me" href="mailto:mail@securedns.eu" title="Send me an email" target="_blank">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <!-- footer -->
+
+</body>
+
+<!-- Favicon icon made by Freepik from www.flaticon.com  -->
+
+</html>

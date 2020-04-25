@@ -1,0 +1,12 @@
+server {
+  listen 127.0.0.1:9010;
+  listen 10.0.2.1:9010;
+
+  location /nginx_status {
+    stub_status on;
+    access_log   off;
+    allow 127.0.0.1;
+    allow 10.0.2.0/24;
+    deny all;
+    }
+}

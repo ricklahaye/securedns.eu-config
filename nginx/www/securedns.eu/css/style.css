@@ -1,0 +1,67 @@
+.card {
+  border: 0px;
+}
+
+.footer li {
+  margin-left: 0px;
+}
+
+.footer li:first-child {
+  margin-left: 0px
+}
+
+.list-inline > li {
+  display: inline-block;
+}
+
+.footer img {
+  width: 60%;
+}
+
+.footer {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+  color: gray;
+}
+
+.footer hr {
+    margin-top: 1.5rem!important;
+    margin-bottom: 5px!important;
+}
+
+.header {
+    margin-top: 3rem!important;
+    margin-bottom: 5rem!important;
+}
+
+.img-profile {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 96px;
+    float: left;
+    margin-right: 20px;
+}
+
+a {
+    color:gray;
+}
+a:hover {
+    color:black;
+}
+
+button {
+     background:none!important;
+     color:inherit;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     cursor: pointer;
+     /* a:link { color: #000000; text-decoration: none}
+     a:visited { color: #000000; text-decoration: none}
+     a:hover { color: #3366CC; text-decoration: underline}
+     a:active { color: #000000; text-decoration: none} */
+}

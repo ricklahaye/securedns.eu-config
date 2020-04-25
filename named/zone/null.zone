@@ -1,0 +1,11 @@
+$TTL    86400   ; one day  
+@       IN      SOA     ads-doh.securedns.eu. mail.securedns.eu. (
+               2014090101
+                    28800
+                     7200
+                   864000
+                    86400 )          
+                NS      ns1.test.securedns.eu.          
+                A       127.0.0.1 
+@       IN      A       127.0.0.1 
+*       IN      A       127.0.0.1
